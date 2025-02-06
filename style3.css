@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;700');
+body {
+    font-family: 'Inknut Antiqua', sans-serif;
+    background-color: #ffffff;
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }
+.box {
+    /* height: 100%;
+    width: 100%; */
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.header {
+    display: flex; /* Enables Flexbox */
+    align-items: start; /* Centers text and images vertically */
+    justify-content: start; /* Keeps everything in the center */
+    gap: 25px; /* Adjust space between images and text */
+    background-color: rgba(251, 49, 49, 1);
+    height: 60px;
+    padding: 10px;
+}
+
+.header-text {
+    font-size: clamp(10px, 4vw, 30px);
+    font-weight: 450;
+    text-align: start;
+}
+
+.header-image {
+    width: 50px; /* Adjust image width */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.blue {
+    grid-area: sidebar;
+    background-color: rgba(156, 0, 0, 1);
+    flex-direction: column; /* Aligns children (nav) vertically */
+    justify-content: flex-start; /* Positions nav at the top */
+    align-items: center; /* Centers the nav horizontally */
+    width: 100%; /* Ensures the sidebar fills the full height */  
+}
+nav a{
+    color: #fff;
+    display: flex;
+    flex-direction: column; /* Stacks links vertically */
+    gap: 1px; /* Adds space between links */
+    margin: 10px 0;
+}
+
+
+.green {
+    grid-area: footer;
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+    align-items: center; /* Centers the button vertically */
+    padding: 20px;
+    background-color: #ff0000;
+}
+
+.contact-button {
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    align-items: center; /* Align the icons vertically */
+    background-color: hsl(5, 91%, 62%); /* Background color for the circle */
+    border: none;
+    cursor: pointer;
+    width: 30px; /* Set the width of the circle */
+    height: 30px; /* Set the height of the circle */
+    border-radius: 50%; /* Makes the button circular */
+    margin: 0 10px; /* Space between buttons */
+    transition: background-color 0.3s ease;
+}
+
+.contact-button i {
+    text-decoration: none;
+    font-size: 20px; /* Icon size */
+    color: rgb(255, 255, 255); /* White color for the icons */
+}
+
+.contact-button:hover {
+    background-color: #7100b3; /* Darker blue on hover */
+}
+
+
+.yellow {
+    grid-area: main;
+    margin-bottom: 10px;
+    overflow-y: auto; 
+    background-color: rgba(237, 94, 94, 1); 
+    padding: 20px;
+    text-align: center; 
+    border-radius: 10px;
+    flex-direction: column; 
+    align-items: center;
+
+}
+.main-image {
+    width: 400px; 
+    height: auto; 
+    margin-bottom: 10px;
+}
+
+.main-text {
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 1.5;
+    padding: 0 10px;
+}
+.grid {
+    display: grid;
+    background-color: #fff;
+    
+}
+
+
+.grid-template-area-section {
+    grid-template-areas: 
+    "header header header"
+    "sidebar main main"
+    "footer footer footer";
+    grid-template-columns: 1fr 7fr; 
+    grid-template-rows: auto 1fr auto;
+    height: 100vh; 
+    row-gap: 10px;
+    column-gap: 20px;
+    column-gap: 20px;
+}
+
+.grid-template-area-section .header {
+    grid-area: header;
+}
+
+.grid-template-area-section .blue {
+    grid-area: sidebar;
+}
+
+.grid-template-area-section .yellow {
+    grid-area: main;
+}
+
+.grid-template-area-section .green {
+    grid-area: footer;
+}
