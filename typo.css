@@ -114,20 +114,58 @@ nav a{
     max-height: 100%;
     overflow-y: auto;
     padding: 100px;
-    text-align: center;
+    /* text-align: center; */
     color: #ffffff;
+
 }
 
-/* Ensure grid layout for projects */
+h1{
+    font-size: 50px;
+    font-weight: bold;
+    /* margin-bottom: 5px; */
+    color: #ffffff;
+    align-items: center;
+    text-align: center;
+}
+
 .iframe-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Forces 3 per row */
+    grid-template-areas: 
+        "top"
+        "row";
+    grid-template-columns: 1fr; /* One column for centering the top iframe */
+    justify-items: center; /* Centers the top iframe */
+    text-align: center;
+    gap: 20px;
+    /* padding: 20px; */
+}
+.top-iframe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ensures they fit inside grid */
+    
+}
+.top-iframe p{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+.top-iframe iframe{
+    width: 600px;
+    max-width: 1000px; /* Controls iframe width */
+    height: 600px;
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+}
+.iframe-grid {
+    grid-area: row;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 3 per row */
     gap: 10px;
     justify-content: center;
-    text-align: center;
-    padding: 100px;
 }
-
 /* Each iframe with its title */
 .iframe-wrapper {
     display: flex;
