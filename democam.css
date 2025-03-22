@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;700');
+body {
+    font-family: 'Inknut Antiqua', sans-serif;
+    background-color: #ffffff;
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }
+.box {
+    /* height: 100%;
+    width: 100%; */
+    font-size: 16px;
+    font-weight: 500;
+    text-align: start;
+    display:flex;
+    justify-content: start;
+    align-items: start;
+   
+}
+
+.header {
+    display: flex; /* Enables Flexbox */
+    align-items: start; /* Centers text and images vertically */
+    justify-content: start; /* Keeps everything in the center */
+    gap: 25px; /* Adjust space between images and text */
+    background-color: rgba(218, 226, 253, 1);
+    height: 60px;
+    padding: 10px;
+}
+
+.header-text {
+    font-size: clamp(10px, 4vw, 30px);
+    font-weight: 450;
+    text-align: start;
+}
+
+.header-image {
+    width: 50px; /* Adjust image width */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.blue {
+    grid-area: sidebar;
+    background-color: rgba(75, 8, 119, 1);
+    flex-direction: column; /* Aligns children (nav) vertically */
+    justify-content: flex-start; /* Positions nav at the top */
+    align-items: center; /* Centers the nav horizontally */
+    width: 100%; /* Ensures the sidebar fills the full height */  
+}
+nav a{
+    color: #fff;
+    display: flex;
+    flex-direction: column; /* Stacks links vertically */
+    gap: 1px; /* Adds space between links */
+    margin: 10px 0;
+}
+
+
+.green {
+    grid-area: footer;
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+    align-items: center; /* Centers the button vertically */
+    padding: 20px;
+    background-color: #0900b2;
+}
+
+.contact-button {
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    align-items: center; /* Align the icons vertically */
+    background-color: #0900b2; /* Background color for the circle */
+    border: none;
+    cursor: pointer;
+    width: 30px; /* Set the width of the circle */
+    height: 30px; /* Set the height of the circle */
+    border-radius: 50%; /* Makes the button circular */
+    margin: 0 10px; /* Space between buttons */
+    transition: background-color 0.3s ease;
+}
+
+.contact-button i {
+    text-decoration: none;
+    font-size: 20px; /* Icon size */
+    color: rgb(255, 255, 255); /* White color for the icons */
+}
+
+.contact-button:hover {
+    background-color: #7100b3; /* Darker blue on hover */
+}
+
+
+
+
+/* Make the 'Main' section small and scrollable */
+.yellow {
+    grid-area: main;
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+  }
+  
+  .scrollable-container {
+    max-height: 100%;
+    overflow-y: auto;
+    padding: 20px;
+    color: #ffffff;
+  }
+  
+  .iframe-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .top-iframe {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 2px solid #000; /* Optional: Adds a border around the canvas */
+  }
+  
+  
+
+h1{
+    font-size: 50px;
+    font-weight: bold;
+    /* margin-bottom: 5px; */
+    color: #ffffff;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+.grid {
+    display: grid;
+    background-color: #fff;
+    
+}
+
+
+.grid-template-area-section {
+    grid-template-areas: 
+    "header header header"
+    "sidebar main main"
+    "footer footer footer";
+    /* column-gap: 10px; */
+    grid-template-columns: 1fr 7fr; 
+    grid-template-rows: auto 1fr auto;
+    height: 100vh; /* Ensures the layout fills the full screen height */
+    row-gap: 10px;
+    column-gap: 20px;
+    column-gap: 20px;
+}
+
+.grid-template-area-section .header {
+    grid-area: header;
+}
+
+.grid-template-area-section .blue {
+    grid-area: sidebar;
+}
+
+.grid-template-area-section .yellow {
+    grid-area: main;
+}
+
+.grid-template-area-section .green {
+    grid-area: footer;
+}
