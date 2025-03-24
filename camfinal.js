@@ -19,13 +19,24 @@ let video;
 let flippedVideo;
 // To store the classification
 let label = "";
-
+let pg;
+let x, y, w, h;
+let full;
+let low;
+let uc;
+let fafeng;
+let previousLabel = "";
 // Load the model first
 function preload() {
-  classifier = ml5.imageClassifier(imageModelURL + 'model.json');
-}
+    classifier = ml5.imageClassifier(imageModelURL + 'model.json');
+    full = loadImage('full.jpg');
+    () => console.error("Failed to load full.png");
+  }
+  
 
 function setup() {
+  low = loadImage('low.jpg');
+  fafeng = loadSound('fafeng.mp3');
   // Create the canvas and set its parent
   let canvas = createCanvas(windowWidth, windowHeight);
   canvas.parent(document.querySelector('.top-iframe')); // Attach it to the correct container
@@ -38,12 +49,60 @@ function setup() {
   flippedVideo = ml5.flipImage(video);
   // Start classifying
   classifyVideo();
+  uc = loadFont('uc.otf');
+  w = 100;
+  h = 100;
+  x = video.width - w;
+  y = 0;
+  pg = createGraphics(w, h);
+  uc = loadFont('uc.otf');
 }
 
 function draw() {
   background(0);
-  // Draw the video
   image(flippedVideo, 0, 0);
+
+  // Copy the desired section to the graphics buffer
+  pg.copy(flippedVideo, x, y, w, h, 0, 0, w, h);
+
+  // Apply pixelation effect
+  let pixelSize = 10;
+  pg.loadPixels();
+  for (let i = 0; i < pg.width; i += pixelSize) {
+    for (let j = 0; j < pg.height; j += pixelSize) {
+      let index = (i + j * pg.width) * 4;
+      let r = pg.pixels[index];
+      let g = pg.pixels[index + 1];
+      let b = pg.pixels[index + 2];
+      pg.fill(r, g, b);
+      pg.noStroke();
+      pg.rect(i, j, pixelSize, pixelSize);
+    }
+  }
+    if (label === "happy") {
+      fafeng.stop();
+  } else if (label === "sad") {
+    y= random(windowHeight)
+    x=random(windowWidth)
+    if (label === "sad" && previousLabel !== "sad") {
+      if (!fafeng.isPlaying()) {
+        fafeng.play();
+      }
+    }
+      image(pg, random(windowWidth), random(windowHeight));
+     textSize(70);
+     textFont(uc);
+    fill(random(255),0,0);
+      text('COME UP CHEER UP!!!', width / 2, height/2);
+  
+  } 
+  pg.updatePixels();
+
+  // Draw the pixelated section on the main canvas
+
+  // image(pg, width - w, 0);
+  previousLabel = label;
+
 
   // Draw the label
   fill(255);
@@ -53,11 +112,9 @@ function draw() {
 
   // Additional visual feedback based on the label
   if (label === "happy") {
-    fill(0, 255, 0);
-    rect(width / 2 - 30, 20, 60, 25);
+    image(full, windowWidth -300, 25,200,100)
   } else if (label === "sad") {
-    fill(225, 0, 0);
-    rect(width / 2 - 30, 20, 60, 25);
+   image(low, windowWidth -300, 25,200,100)
   } else {
     fill(random(255), random(255), random(255));
     textSize(30);

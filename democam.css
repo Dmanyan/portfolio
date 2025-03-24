@@ -100,17 +100,20 @@ nav a{
     width: 100%;
     height: 100vh;
     padding: 10px;
-    border: 2px solid #ddd;
+    border: 2px solid #ffffff;
     border-radius: 10px;
+    color: #000000;
   }
   
   .scrollable-container {
     max-height: 100%;
     overflow-y: auto;
     padding: 20px;
-    color: #ffffff;
+    color: #000000;
   }
-  
+  .scrollable-container h1{
+    color: #000000;
+  }
   .iframe-container {
     position: relative;
     width: 100%;
