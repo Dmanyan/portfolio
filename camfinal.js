@@ -86,9 +86,9 @@ function draw() {
       fafeng.stop();
   } else if (label === "sad") {
     push()
-        filter(INVERT);
-       image(capture, 0, 0, width, width * capture.height / capture.width);
-      pop()
+    filter(INVERT);
+    image(capture, 0, 0, width, width * capture.height / capture.width);
+    pop()
     y= random(windowHeight)
     x=random(windowWidth)
     if (label === "sad" && previousLabel !== "sad") {
@@ -126,6 +126,8 @@ function draw() {
     fill(random(255), random(255), random(255));
     textSize(30);
     text('Come in the Cam!!!', width / 2, 25);
+    
+   
   }
 }
 
