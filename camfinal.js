@@ -26,6 +26,7 @@ let low;
 let uc;
 let fafeng;
 let previousLabel = "";
+let capture;
 // Load the model first
 function preload() {
     classifier = ml5.imageClassifier(imageModelURL + 'model.json');
@@ -56,6 +57,8 @@ function setup() {
   y = 0;
   pg = createGraphics(w, h);
   uc = loadFont('uc.otf');
+  capture = createCapture(VIDEO);
+  capture.hide();
 }
 
 function draw() {
@@ -82,6 +85,10 @@ function draw() {
     if (label === "happy") {
       fafeng.stop();
   } else if (label === "sad") {
+    push()
+        filter(INVERT);
+       image(capture, 0, 0, width, width * capture.height / capture.width);
+      pop()
     y= random(windowHeight)
     x=random(windowWidth)
     if (label === "sad" && previousLabel !== "sad") {
