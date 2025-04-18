@@ -5,16 +5,16 @@ const questions = [
       options: [{ text: "Good", value: 1 }, { text: "Bad", value: 0 }]
     },
     {
-      text: "How many times have you smiled?",
+      text: "How many times have you smiled? 1-5",
       type: "range",
-      min: 0,
+      min: 1,
       max: 10,
       default: 5
     },
     {
-      text: "How lucky do you feel today?",
+      text: "How lucky do you feel today? min-max",
       type: "range",
-      min: 0,
+      min: 1,
       max: 10,
       default: 5
     },
@@ -29,9 +29,9 @@ const questions = [
       options: [{ text: "Happy", value: 1 }, { text: "Not happy", value: 0 }]
     },
     {
-      text: "How would you rate your day today?",
+      text: "How would you rate your day today? 1-10",
       type: "range",
-      min: 0,
+      min: 1,
       max: 10,
       default: 5
     },
@@ -49,7 +49,8 @@ const questions = [
   
   let currentQuestion = 0;
   let answers = [];
-  
+  let happysong
+
   function showQuestion() {
     const q = questions[currentQuestion];
     const container = document.getElementById("quizStage");
@@ -121,12 +122,15 @@ const questions = [
   
     if (avg >= 2) {
       main.style.backgroundImage = "url('final-happy-face.png')";
-      document.getElementById("result").textContent = "You seem to be in a good mood! keep it going:)";
+      document.getElementById("result").textContent = "You seem to be in a good mood! keep it going :)";
+      document.getElementById("happyAudio").play(); // ← this line
     } else {
       main.style.backgroundImage = "url('final-sad-face.png')";
-      document.getElementById("result").textContent = "You a bit down today. Come On Cheer Up !!! ";
+      document.getElementById("result").textContent = "You a bit down today. Come on, cheer up!";
+      document.getElementById("sadAudio").play(); // ← this line
     }
   }
+  
   
   document.addEventListener("DOMContentLoaded", showQuestion);
   

@@ -6,9 +6,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="quiz.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.sound.min.js"></script>
     <script type="text/javascript" src="myProcessingCode.js"></script>                    <!-- this is an HTML comment -->
 <script type="text/javascript" src="quiz.js"></script>                        <!-- Our p5 library -->
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>    <!-- JQuery, a popular utility lib -->
+
 </head>
 <body>
     
@@ -31,7 +35,7 @@
         
                
                     <div class="quiz-stage" id="quizStage">
-                        <!-- Questions will be injected here by JS -->
+                          
                       </div>
                       <div id="result" class="result-face"></div>
                       
@@ -53,5 +57,8 @@
 
     </div>
 </div>
+<audio id="happyAudio" src="happy.mp3"></audio>
+<audio id="sadAudio" src="sad.mp3"></audio>
+
 </body>
 </html>

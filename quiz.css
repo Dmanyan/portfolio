@@ -154,6 +154,8 @@ input[type="range"] {
     width: 300px;
 }
 
+
+
 #result.result-face {
     display: none;
     font-size: 2rem;
