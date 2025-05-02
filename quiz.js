@@ -123,11 +123,11 @@ const questions = [
     if (avg >= 2) {
       main.style.backgroundImage = "url('final-happy-face.png')";
       document.getElementById("result").textContent = "You seem to be in a good mood! keep it going :)";
-      document.getElementById("happyAudio").play(); // ← this line
+      document.getElementById("happyAudio").play(); 
     } else {
       main.style.backgroundImage = "url('final-sad-face.png')";
       document.getElementById("result").textContent = "You a bit down today. Come on, cheer up!";
-      document.getElementById("sadAudio").play(); // ← this line
+      document.getElementById("sadAudio").play(); 
     }
   }
   
