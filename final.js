@@ -78,8 +78,8 @@ function leadersfetch(leaders) {
 }
 
 function playerFetch(playerData) {
-
-    fetch(`${playerData}`)
+    let newPlayerData = playerData.replace('http://','https://'); //to get the code runing
+    fetch(`${newPlayerData}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Team not found');
