@@ -51,7 +51,7 @@ function leadersfetch(leaders) {
     console.log(leaders);
     let newleaders = leaders.replace('http://','https://');
     console.log(newleaders);
-    fetch(`${newleadersleaders}`)
+    fetch(`${newleaders}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Team not found');
