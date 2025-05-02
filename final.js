@@ -48,7 +48,10 @@ function displayTeam(team) {
 }
 
 function leadersfetch(leaders) {
-    fetch(`${leaders}`)
+    console.log(leaders);
+    let newleaders = leaders.replace('http://','https://');
+    console.log(newleaders);
+    fetch(`${newleadersleaders}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Team not found');
@@ -107,7 +110,7 @@ function playerFetch(playerData) {
         <img src="${playerPicture}" alt="${position}" style="width: 150px;">
        <p>${fullName}<p>
        <p>age: ${age}<p>
-       
+
 
        
     `;
