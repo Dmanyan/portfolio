@@ -107,6 +107,7 @@ function playerFetch(playerData) {
         <img src="${playerPicture}" alt="${position}" style="width: 150px;">
        <p>${fullName}<p>
        <p>age: ${age}<p>
+       
 
        
     `;
