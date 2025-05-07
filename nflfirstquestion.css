@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('nflboarder.jpg');
+    background-size: cover;
+    background-position-y: -1cm;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+#nfl {
+    display: flex;
+    justify-content: center;
+}
+.threepositions{
+    display: flex;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 200px;
+   justify-content: center;
+   align-items: center;
+}
+.nfl-options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ensures they fit inside grid */
+}
+.nfl-options p{
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #000000;
+}
+.nfl-image {
+    width: 280px;
+    max-width: 300px;
+    height: auto; 
+    border-radius: 10px; 
+    transition: transform 0.3s ease-in-out;
+}
+.nfl-image:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}

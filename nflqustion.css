@@ -101,16 +101,17 @@ nav a{
     width: 100%; /* Ensures it fills the container */
     height: 100vh; 
     color: #000000;
-        font-size: clamp(20px, 4vw, 40px);
+    font-size: clamp(20px, 2vw, 40px);
     font-weight: 500;
     text-align: center;
     flex-direction: column; 
     align-items: center;
 
 }
+
 .nfl-container {
     display: grid;
-    /* grid-template-columns: repeat(3, 1fr);  */
+    /* grid-template-columns: repeat(2, 1fr);  */
     gap: 30px; 
     padding: 10px;
     justify-content: center;
@@ -118,12 +119,21 @@ nav a{
 
 .nfl {
     display: flex;
+     grid-template-columns: repeat(2, 1fr); 
+     gap: 200px;
     justify-content: center;
     align-items: center;
+  
 }
-
+.nfl-option{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ensures they fit inside grid */
+}
 .nfl-image {
-    width: 300px;
+    width: 280px;
     max-width: 300px;
     height: auto; 
     border-radius: 10px; 
