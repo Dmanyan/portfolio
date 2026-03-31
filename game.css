@@ -53,7 +53,7 @@ nav a{
     color: #fff;
     display: flex;
     flex-direction: column; /* Stacks links vertically */
-    gap: 1px; /* Adds space between links */
+    gap: 1px; /* Adds space between links s*/
     margin: 10px 0;
 }
 
@@ -90,6 +90,7 @@ nav a{
 .contact-button:hover {
     background-color: rgb(7, 160, 91); /* Darker blue on hover */
 }
+
 
 /* Update the Yellow Box to allow scrolling */
 .yellow {
