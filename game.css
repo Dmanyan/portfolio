@@ -123,17 +123,20 @@ nav a{
 /* Stack Name and Image vertically */
 .game {
     display: flex;
-    flex-direction: column; /* This puts text on top of the link/image */
-    justify-content: flex-start;
+    flex-direction: column; /* FORCES TOP-TO-BOTTOM STACKING */
+    justify-content: center;
     align-items: center;
-    gap: 10px; /* Space between name and image */
+    gap: 15px; /* Adds space between the title and the image */
+    margin-bottom: 20px;
 }
 
-/* Style for the Game Names */
 .game-name {
-    font-size: 18px;
+    display: block; /* Ensures it takes up the full width above the image */
+    font-size: 1.2rem;
     font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Helps text stand out against BG */
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: 5px;
 }
 
 /* Ensure images don't break the layout */
