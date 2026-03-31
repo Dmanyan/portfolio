@@ -1,0 +1,66 @@
+/* Container for the Project Page */
+.project-page {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    overflow-y: auto; /* Allow scrolling for long descriptions */
+    height: auto;
+    min-height: 100vh;
+}
+
+.project-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.9);
+}
+
+/* Video Styling */
+.video-container {
+    width: 80%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    margin: 20px 0;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Info Grid (Role, Tools, etc.) */
+.project-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    width: 80%;
+}
+
+.info-item h3 {
+    font-size: 1.2rem;
+    color: #4dfdcf; /* Accent color */
+    margin-bottom: 5px;
+}
+
+/* Play Button */
+.play-button {
+    margin-top: 40px;
+    padding: 15px 30px;
+    background-color: #043d23;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.play-button:hover {
+    background-color: #07a05b;
+    transform: scale(1.1);
+}
