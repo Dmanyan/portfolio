@@ -1,66 +1,82 @@
-/* Container for the Project Page */
-.project-page {
-    display: flex;
-    flex-direction: column;
-    padding: 40px;
-    overflow-y: auto; /* Allow scrolling for long descriptions */
-    height: auto;
-    min-height: 100vh;
+.header {
+    display: flex; /* Enables Flexbox */
+    align-items: start; /* Centers text and images vertically */
+    justify-content: start; /* Keeps everything in the center */
+    gap: 25px; /* Adjust space between images and text */
+    background-color: rgba(218, 226, 253, 1);
+    height: 60px;
+    padding: 10px;
 }
 
-.project-title {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.9);
+.header-text {
+    font-size: clamp(10px, 4vw, 30px);
+    font-weight: 450;
+    text-align: start;
 }
 
-/* Video Styling */
-.video-container {
-    width: 80%;
-    max-width: 800px;
-    aspect-ratio: 16 / 9;
-    margin: 20px 0;
-    border: 5px solid rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    overflow: hidden;
+.header-image {
+    width: 50px; /* Adjust image width */
+    height: auto; /* Maintains aspect ratio */
 }
 
-.video-container iframe {
-    width: 100%;
-    height: 100%;
+
+/* Styling for the video to match your iframe sketches */
+.video-wrapper iframe {
+    width: 800px; /* Matching your sketch size preference */
+    height: 450px;
+    border: 3px solid #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
 }
 
-/* Info Grid (Role, Tools, etc.) */
-.project-info-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    background: rgba(0, 0, 0, 0.6);
+/* Text box for the breakdown to fit in the grid */
+.text-box {
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 10px;
-    margin-top: 30px;
-    width: 80%;
+    border: 1px solid #ffffff;
+    width: 100%;
+    max-width: 500px;
+    color: white;
+    text-align: left;
+    line-height: 1.6;
 }
 
-.info-item h3 {
-    font-size: 1.2rem;
-    color: #4dfdcf; /* Accent color */
-    margin-bottom: 5px;
-}
-
-/* Play Button */
-.play-button {
-    margin-top: 40px;
+/* Play link button */
+.play-link {
+    display: inline-block;
     padding: 15px 30px;
-    background-color: #043d23;
+    background-color: #ff0000; /* Matching your P5js border color */
     color: white;
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 5px;
     font-weight: bold;
     transition: 0.3s;
 }
 
-.play-button:hover {
-    background-color: #07a05b;
-    transform: scale(1.1);
+.play-link:hover {
+    background-color: #ffffff;
+    color: #ff0000;
+}
+
+/* Adjusting the yellow box for your specific background */
+.yellow {
+    background-image: url('background night.png'); /* Using your night background */
+    background-attachment: fixed; /* Keeps background still while you scroll projects */
+}
+/* This targets everything inside the yellow box specifically */
+.yellow, 
+.yellow h1, 
+.yellow h2, 
+.yellow h3, 
+.yellow p, 
+.yellow span, 
+.yellow div {
+    color: #ffffff !important;
+}
+
+/* Specifically for the 'WarioWare' and 'Art' titles in your grid */
+.iframe-wrapper p {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: adds a shadow to make it pop */
 }
